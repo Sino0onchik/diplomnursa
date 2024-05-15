@@ -27,7 +27,12 @@ SECRET_KEY = '934nw3r62@!m0^ksgw3#31tntglnr%td+-_b89xpu2@q2zqv=d'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['floating-badlands-41165.herokuapp.com', 'cardealerapp.co', 'www.cardealerapp.co', '127.0.0.1:8000']
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['https://raimkulov001.ru', 'https://www.raimkulov001.ru']
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
