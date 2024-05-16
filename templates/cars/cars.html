@@ -9,10 +9,10 @@
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
-            <h1>Our Car Inventory</h1>
+            <h1>Наш автопарк</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li class="active">Cars</li>
+                <li><a href="{% url 'home' %}">Домой</a></li>
+                <li class="active">Машины</li>
             </ul>
         </div>
     </div>
@@ -32,7 +32,7 @@
                         <div class="car-box-3">
                             <div class="car-thumbnail">
                                 <a href="{% url 'car_detail' car.id %}" class="car-img">
-                                    <div class="tag">For Sale</div>
+                                    <div class="tag">На продажу</div>
                                     <div class="price-box">
                                         <span>$ {{car.price | intcomma }}</span>
                                     </div>
@@ -140,15 +140,15 @@
                 <div class="sidebar-right">
                     <!-- Advanced search start -->
                     <div class="widget advanced-search2">
-                        <h3 class="sidebar-title">Search Cars</h3>
+                        <h3 class="sidebar-title">Поиск машин</h3>
                         <form action="{% url 'search' %}" method="">
                             <div class="form-group">
-                                <input type="text" name="keyword" placeholder="Search by name" class="form-control">
+                                <input type="text" name="keyword" placeholder="Искать по названию" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <select class="form-control search-fields" name="model">
-                                    <option selected="true" disabled="disabled">Model</option>
+                                    <option selected="true" disabled="disabled">Модель</option>
                                     {% for model in model_search %}
                                       <option value="{{model}}">{{model}}</option>
                                     {% endfor %}
@@ -156,7 +156,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="city">
-                                    <option selected="true" disabled="disabled">Location</option>
+                                    <option selected="true" disabled="disabled">Локация</option>
                                     {% for city in city_search %}
                                       <option value="{{city}}">{{city}}</option>
                                     {% endfor %}
@@ -164,7 +164,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="year">
-                                    <option selected="true" disabled="disabled">Year</option>
+                                    <option selected="true" disabled="disabled">Год</option>
                                     {% for year in year_search %}
                                       <option value="{{year}}">{{year}}</option>
                                     {% endfor %}
@@ -172,20 +172,20 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="body_style">
-                                    <option selected="true" disabled="disabled">Select Type Of Car</option>
+                                    <option selected="true" disabled="disabled">Тип машины</option>
                                     {% for body_style in body_style_search %}
                                       <option value="{{body_style}}">{{body_style}}</option>
                                     {% endfor %}
                                 </select>
                             </div>
                             <div class="range-slider clearfix">
-                                            <label>Price</label>
-                                            <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                            <label>Цена</label>
+                                            <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="$" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                             <div class="clearfix"></div>
                                         </div>
                             <div class="form-group">
                                 <button class="btn btn-block button-theme btn-md">
-                                    <i class="fa fa-search"></i> Search
+                                    <i class="fa fa-search"></i> Искать
                                 </button>
                             </div>
                         </form>

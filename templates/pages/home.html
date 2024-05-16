@@ -14,28 +14,28 @@
                 <img class="d-block w-100 h-100" src="{% static 'img/car-6.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
                 
-                    <h3>Drive Your Own Dreams</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read More</a>
+                    <h3>Управляйте своей мечтой</h3>
+                    <h5>Позвольте нам помочь вам справиться с инновационным стрессом<br>
+                        бесплатный подход в поиске автомобиля своей мечты.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Подробнее</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-7.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3>Fuel for Soul</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read More</a>
+                    <h3>Топливо для души</h3>
+                    <h5>Позвольте нам помочь вам справиться с инновационным стрессом<br>
+                        свободный подход в поиске автомобиля своей мечты.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Подробнее</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/carslider2.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3>Car for Everyone</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read More</a>
+                    <h3>Автомобиль для всех</h3>
+                    <h5>Позвольте нам помочь вам справиться с инновационным стрессом<br>
+                        свободный подход в поиске автомобиля своей мечты.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Подробнее</a>
                 </div>
             </div>
         </div>
@@ -43,12 +43,12 @@
         <div class="search-box-4 sb-8">
             <form action="{% url 'search' %}" method="">
                 <div class="form-group">
-                    <input type="text" name="keyword" placeholder="Search by Car Name" class="form-control">
+                    <input type="text" name="keyword" placeholder="Искать по названию машин" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <select class="form-control search-fields" name="model">
-                        <option selected="true" disabled="disabled">Model</option>
+                        <option selected="true" disabled="disabled">Модель</option>
                         {% for model in model_search %}
                           <option value="{{model}}">{{model}}</option>
                         {% endfor %}
@@ -57,7 +57,7 @@
 				<!-- Log on to codeastro.com for more projects -->
                 <div class="form-group">
                     <select class="form-control search-fields" name="city">
-                        <option selected="true" disabled="disabled">Location</option>
+                        <option selected="true" disabled="disabled">Локация</option>
                         {% for city in city_search %}
                           <option value="{{city}}">{{city}}</option>
                         {% endfor %}
@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control search-fields" name="year">
-                        <option selected="true" disabled="disabled">Year</option>
+                        <option selected="true" disabled="disabled">Год</option>
                         {% for year in year_search %}
                           <option value="{{year}}">{{year}}</option>
                         {% endfor %}
@@ -73,20 +73,20 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control search-fields" name="body_style">
-                        <option selected="true" disabled="disabled">Select Type Of Car</option>
+                        <option selected="true" disabled="disabled">Тип машины</option>
                         {% for body_style in body_style_search %}
                           <option value="{{body_style}}">{{body_style}}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="range-slider clearfix">
-                                <label>Price</label>
-                                <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                <label>Цена</label>
+                                <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="$" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                 <div class="clearfix"></div>
                             </div>
                 <div class="form-group">
                     <button class="btn btn-block button-theme btn-md">
-                        <i class="fa fa-filter"></i> Filter
+                        <i class="fa fa-filter"></i> Фильтровать
                     </button>
                 </div>
             </form>
@@ -114,8 +114,8 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>Featured <span>Cars</span></h1>
-            <p>Amongst many of our available cars, here are some few picks that you might have an interest in.</p>
+            <h1>Рекомендуемые <span>Автомобили</span></h1>
+            <p>Среди множества имеющихся у нас автомобилей есть несколько вариантов, которые могут вас заинтересовать.</p>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -125,7 +125,7 @@
                     <div class="car-box-3">
                         <div class="car-thumbnail">
                             <a href="{% url 'car_detail' car.id %}" class="car-img">
-                                <div class="tag-2">Featured</div>
+                                <div class="tag-2">Рекомендуемые</div>
                                 <div class="price-box">
                                     <span>${{car.price | intcomma}}</span>
                                 </div>
@@ -206,7 +206,7 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>Latest <span>Cars</span></h1>
+            <h1>Последние <span>Автомобили</span></h1>
             <p></p>
         </div>
         <div class="row">
@@ -299,8 +299,8 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>Executive <span>Team</span></h1>
-            <p>Team working behind maintaining the quality of our Car Dealership Website.</p>
+            <h1>Руководитель <span>Команда</span></h1>
+            <p>Команда работает над поддержанием качества нашего веб-сайта автосалона.</p>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -337,11 +337,11 @@
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-12">
                 <div class="intro-text">
-                    <h3>Do You Have Questions ?</h3>
+                    <h3>У вас есть вопросы?</h3>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12">
-                <a href="{% url 'contact' %}" class="btn btn-md">Get in Touch</a>
+                <a href="{% url 'contact' %}" class="btn btn-md">Связаться</a>
             </div>
         </div>
     </div>
