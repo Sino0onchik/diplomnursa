@@ -4,8 +4,8 @@ from cars.models import Car
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.contrib import messages
+from contacts.models import SiteSetting
 
-# Create your views here.
 
 def home(request):
     teams = Team.objects.all()
@@ -23,6 +23,7 @@ def home(request):
         'city_search': city_search,
         'year_search': year_search,
         'body_style_search': body_style_search,
+        'site': SiteSetting.objects.all().first(),
     }
     return render(request, 'pages/home.html', data)
 
@@ -31,11 +32,14 @@ def about(request):
     teams = Team.objects.all()
     data = {
         'teams': teams,
+        'site': SiteSetting.objects.all().first(),
     }
     return render(request, 'pages/about.html', data)
 
+
 def services(request):
-    return render(request, 'pages/services.html')
+    return render(request, 'pages/services.html', {'site': SiteSetting.objects.all().first()})
+
 
 def contact(request):
     if request.method == 'POST':
@@ -60,4 +64,4 @@ def contact(request):
         messages.success(request, 'Thank you for contacting us. We will get back to you shortly')
         return redirect('contact')
 
-    return render(request, 'pages/contact.html')
+    return render(request, 'pages/contact.html', {'site': SiteSetting.objects.all().first()})

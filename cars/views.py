@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Car
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from contacts.models import SiteSetting
 
-# Create your views here.
+
 def cars(request):
     cars = Car.objects.order_by('-created_date')
     paginator = Paginator(cars, 4)
@@ -20,14 +21,17 @@ def cars(request):
         'city_search': city_search,
         'year_search': year_search,
         'body_style_search': body_style_search,
+        'site': SiteSetting.objects.all().first(),
     }
     return render(request, 'cars/cars.html', data)
+
 
 def car_detail(request, id):
     single_car = get_object_or_404(Car, pk=id)
 
     data = {
         'single_car': single_car,
+        'site': SiteSetting.objects.all().first(),
     }
     return render(request, 'cars/car_detail.html', data)
 
@@ -79,5 +83,6 @@ def search(request):
         'year_search': year_search,
         'body_style_search': body_style_search,
         'transmission_search': transmission_search,
+        'site': SiteSetting.objects.all().first(),
     }
     return render(request, 'cars/search.html', data)

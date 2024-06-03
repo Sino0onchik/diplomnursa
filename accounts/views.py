@@ -3,8 +3,8 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from contacts.models import Contact
 from django.contrib.auth.decorators import login_required
+from contacts.models import SiteSetting
 
-# Create your views here.
 
 def login(request):
     if request.method == 'POST':
@@ -20,7 +20,8 @@ def login(request):
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('login')
-    return render(request, 'accounts/login.html')
+    return render(request, 'accounts/login.html', {'site': SiteSetting.objects.all().first()})
+
 
 def register(request):
     if request.method == 'POST':
@@ -51,7 +52,7 @@ def register(request):
             messages.error(request, 'Password do not match')
             return redirect('register')
     else:
-        return render(request, 'accounts/register.html')
+        return render(request, 'accounts/register.html', {'site': SiteSetting.objects.all().first()})
 
 
 @login_required(login_url = 'login')
@@ -61,8 +62,10 @@ def dashboard(request):
 
     data = {
         'inquiries': user_inquiry,
+        'site': SiteSetting.objects.all().first(),
     }
     return render(request, 'accounts/dashboard.html', data)
+
 
 def logout(request):
     if request.method == 'POST':
